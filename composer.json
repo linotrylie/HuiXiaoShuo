@@ -1,0 +1,84 @@
+{
+  "name": "workerman/webman",
+  "type": "project",
+  "keywords": [
+    "high performance",
+    "http service"
+  ],
+  "homepage": "https://www.workerman.net",
+  "license": "MIT",
+  "description": "High performance HTTP Service Framework.",
+  "authors": [
+    {
+      "name": "walkor",
+      "email": "walkor@workerman.net",
+      "homepage": "https://www.workerman.net",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "walkor@workerman.net",
+    "issues": "https://github.com/walkor/webman/issues",
+    "forum": "https://wenda.workerman.net/",
+    "wiki": "https://workerman.net/doc/webman",
+    "source": "https://github.com/walkor/webman"
+  },
+  "require": {
+    "php": ">=8.1",
+    "workerman/webman-framework": "^1.5.0",
+    "monolog/monolog": "^2.0",
+    "psr/container": "1.1.1",
+    "webman/blade": "1.5.2",
+    "vlucas/phpdotenv": "^5.5",
+    "ext-json": "*",
+    "webman/captcha": "^1.0",
+    "webman/redis-queue": "^1.2",
+    "hhink/webman-sms": "^1.0",
+    "webman/cors": "^1.0",
+    "yzh52521/webman-throttle": "^1.0",
+    "illuminate/redis": "^8.2.0",
+    "illuminate/events": "^8.83",
+    "symfony/cache": "^5.2",
+    "topthink/think-validate": "^2.0",
+    "tinywan/jwt": "^1.6",
+    "php-di/php-di": "6",
+    "doctrine/annotations": "1.14",
+    "workerman/validation": "^3.0",
+    "yzh52521/webman-mailer": "^1.1",
+    "illuminate/database": "^8.83",
+    "illuminate/pagination": "^8.83",
+    "symfony/var-dumper": "^5.4",
+    "ext-curl": "*",
+    "webman/event": "^1.0",
+    "robmorgan/phinx": "^0.14.0",
+    "webman/console": "^1.3",
+    "ext-bcmath": "*",
+    "ext-posix": "*",
+    "ext-pcntl": "*"
+  },
+  "suggest": {
+    "ext-event": "For better performance. "
+  },
+  "autoload": {
+    "psr-4": {
+      "": "./",
+      "app\\": "./app",
+      "App\\": "./app",
+      "app\\View\\Components\\": "./app/view/components"
+    },
+    "files": [
+      "./support/helpers.php"
+    ]
+  },
+  "scripts": {
+    "post-package-install": [
+      "support\\Plugin::install"
+    ],
+    "post-package-update": [
+      "support\\Plugin::install"
+    ],
+    "pre-package-uninstall": [
+      "support\\Plugin::uninstall"
+    ]
+  }
+}
